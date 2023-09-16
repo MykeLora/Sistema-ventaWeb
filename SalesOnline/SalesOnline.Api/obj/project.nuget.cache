@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "xYnhMZwIZ4hBrcoAqcfw6W3M2kJGijbQG5HFfMP6gksXfr/hgAtRhOP0DjUkflrokYPQTzs2u+5XgFywWzqkBw==",
+  "dgSpecHash": "1KWGgMMU60dzk84/iwoGMRwl6QAXkOGva5iVejMzaSjHyw5mQpAB6M63vZJma+XHLVHGzptzdduSwjoFAXUGSw==",
   "success": true,
-  "projectFilePath": "C:\\MyProyect\\Sistema-ventaWeb\\SalesOnline\\SalesOnline.Apii\\SalesOnline.Apii.csproj",
+  "projectFilePath": "C:\\MyProyect\\Sistema-ventaWeb\\SalesOnline\\SalesOnline.Api\\SalesOnline.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\maycol\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "C:\\Users\\maycol\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",

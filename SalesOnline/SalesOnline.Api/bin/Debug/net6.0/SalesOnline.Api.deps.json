@@ -6,12 +6,12 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v6.0": {
-      "SalesOnline.Apii/1.0.0": {
+      "SalesOnline.Api/1.0.0": {
         "dependencies": {
           "Swashbuckle.AspNetCore": "6.5.0"
         },
         "runtime": {
-          "SalesOnline.Apii.dll": {}
+          "SalesOnline.Api.dll": {}
         }
       },
       "Microsoft.Extensions.ApiDescription.Server/6.0.5": {},
@@ -64,7 +64,7 @@
     }
   },
   "libraries": {
-    "SalesOnline.Apii/1.0.0": {
+    "SalesOnline.Api/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

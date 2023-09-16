@@ -1,4 +1,4 @@
-namespace SalesOnline.Apii
+namespace SalesOnline.Api
 {
     public class WeatherForecast
     {

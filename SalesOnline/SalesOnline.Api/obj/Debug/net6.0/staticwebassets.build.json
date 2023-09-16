@@ -1,8 +1,8 @@
 {
   "Version": 1,
-  "Hash": "f1aMBtroF1y2YQ1zqqM6tAqh9jndoD2Ibnx6TdFSWQ4=",
-  "Source": "SalesOnline.Apii",
-  "BasePath": "_content/SalesOnline.Apii",
+  "Hash": "VQZnlsXvnrxGycrJWNiZmgz7VtsZTvv+B6AFkrZIxp0=",
+  "Source": "SalesOnline.Api",
+  "BasePath": "_content/SalesOnline.Api",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
