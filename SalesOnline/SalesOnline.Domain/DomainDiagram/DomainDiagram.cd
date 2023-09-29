@@ -21,7 +21,7 @@
       <FileName>Entities\Category.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="SalesOnline.Domain.Entities.DetalleVenta" Collapsed="true">
+  <Class Name="SalesOnline.Domain.Entities.DetalleVenta">
     <Position X="9.25" Y="2.5" Width="1.5" />
     <InheritanceLine Type="SalesOnline.Domain.Core.Gestion" FixedToPoint="true">
       <Path>
@@ -50,7 +50,7 @@
       <FileName>Entities\MenuRol.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="SalesOnline.Domain.Entities.Producto" Collapsed="true">
+  <Class Name="SalesOnline.Domain.Entities.Producto">
     <Position X="6.25" Y="2.5" Width="1.5" />
     <InheritanceLine Type="SalesOnline.Domain.Core.Gestion" FixedFromPoint="true">
       <Path>
@@ -80,7 +80,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="SalesOnline.Domain.Entities.Venta" Collapsed="true">
-    <Position X="6.25" Y="4" Width="1.5" />
+    <Position X="6.25" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAEgAAAABAAA=</HashCode>
       <FileName>Entities\Venta.cs</FileName>

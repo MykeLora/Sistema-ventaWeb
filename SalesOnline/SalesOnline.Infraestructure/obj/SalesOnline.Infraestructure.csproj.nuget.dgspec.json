@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\MyProyect\\Sistema-ventaWeb\\SalesOnline\\SalesOnline.Infraestructure\\SalesOnline.Infraestructure.csproj": {}
+    "C:\\MyProyect\\SalesOnline\\SalesOnline.Infraestructure\\SalesOnline.Infraestructure.csproj": {}
   },
   "projects": {
-    "C:\\MyProyect\\Sistema-ventaWeb\\SalesOnline\\SalesOnline.Domain\\SalesOnline.Domain.csproj": {
+    "C:\\MyProyect\\SalesOnline\\SalesOnline.Domain\\SalesOnline.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\MyProyect\\Sistema-ventaWeb\\SalesOnline\\SalesOnline.Domain\\SalesOnline.Domain.csproj",
+        "projectUniqueName": "C:\\MyProyect\\SalesOnline\\SalesOnline.Domain\\SalesOnline.Domain.csproj",
         "projectName": "SalesOnline.Domain",
-        "projectPath": "C:\\MyProyect\\Sistema-ventaWeb\\SalesOnline\\SalesOnline.Domain\\SalesOnline.Domain.csproj",
-        "packagesPath": "C:\\Users\\maycol\\.nuget\\packages\\",
-        "outputPath": "C:\\MyProyect\\Sistema-ventaWeb\\SalesOnline\\SalesOnline.Domain\\obj\\",
+        "projectPath": "C:\\MyProyect\\SalesOnline\\SalesOnline.Domain\\SalesOnline.Domain.csproj",
+        "packagesPath": "C:\\Users\\usus\\.nuget\\packages\\",
+        "outputPath": "C:\\MyProyect\\SalesOnline\\SalesOnline.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "D:\\visual studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\maycol\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\usus\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -63,20 +64,20 @@
         }
       }
     },
-    "C:\\MyProyect\\Sistema-ventaWeb\\SalesOnline\\SalesOnline.Infraestructure\\SalesOnline.Infraestructure.csproj": {
+    "C:\\MyProyect\\SalesOnline\\SalesOnline.Infraestructure\\SalesOnline.Infraestructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\MyProyect\\Sistema-ventaWeb\\SalesOnline\\SalesOnline.Infraestructure\\SalesOnline.Infraestructure.csproj",
+        "projectUniqueName": "C:\\MyProyect\\SalesOnline\\SalesOnline.Infraestructure\\SalesOnline.Infraestructure.csproj",
         "projectName": "SalesOnline.Infraestructure",
-        "projectPath": "C:\\MyProyect\\Sistema-ventaWeb\\SalesOnline\\SalesOnline.Infraestructure\\SalesOnline.Infraestructure.csproj",
-        "packagesPath": "C:\\Users\\maycol\\.nuget\\packages\\",
-        "outputPath": "C:\\MyProyect\\Sistema-ventaWeb\\SalesOnline\\SalesOnline.Infraestructure\\obj\\",
+        "projectPath": "C:\\MyProyect\\SalesOnline\\SalesOnline.Infraestructure\\SalesOnline.Infraestructure.csproj",
+        "packagesPath": "C:\\Users\\usus\\.nuget\\packages\\",
+        "outputPath": "C:\\MyProyect\\SalesOnline\\SalesOnline.Infraestructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "D:\\visual studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\maycol\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\usus\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -85,14 +86,15 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netstandard2.1": {
             "targetAlias": "netstandard2.1",
             "projectReferences": {
-              "C:\\MyProyect\\Sistema-ventaWeb\\SalesOnline\\SalesOnline.Domain\\SalesOnline.Domain.csproj": {
-                "projectPath": "C:\\MyProyect\\Sistema-ventaWeb\\SalesOnline\\SalesOnline.Domain\\SalesOnline.Domain.csproj"
+              "C:\\MyProyect\\SalesOnline\\SalesOnline.Domain\\SalesOnline.Domain.csproj": {
+                "projectPath": "C:\\MyProyect\\SalesOnline\\SalesOnline.Domain\\SalesOnline.Domain.csproj"
               }
             }
           }
