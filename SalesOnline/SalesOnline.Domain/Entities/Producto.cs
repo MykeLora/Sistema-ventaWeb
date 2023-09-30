@@ -9,7 +9,6 @@ namespace SalesOnline.Domain.Entities
         public int? idCategoria { get; set; }
         public int? stock { get; set; }
         public decimal precio { get; set; }
-        public DateTime? FechaRegistro { get; set; }
         public bool? esActivo { get; set; }
 
         public Category categoria { get; set; }

@@ -9,7 +9,7 @@ namespace SalesOnline.Domain.Entities
     {
         public int idRol { get; set; }
         public String nombre{ get; set; }
-        public DateTime? FechaRegistro { get; set; }
+       
 
     }
 }
