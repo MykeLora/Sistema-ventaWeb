@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "p64hS6A+eyyhA56hbASOd/+duA7xcAXDP6+7E0QOO6FCkRghdPXWz9DjctUwJCTepNEsz+2ChG2cIus/gaPT4A==",
+  "dgSpecHash": "xn324FKJLVUqvHn0dID54eGpf8FCht0LBK37Qc32x7FXd5qKZr2yiWGLBc3PPU1w+WcFyIJm24CZqzRWygMO9A==",
   "success": true,
-  "projectFilePath": "C:\\MyProyect\\Sistema-ventaWeb\\SalesOnline\\SalesOnline.Loc\\SalesOnline.Loc.csproj",
+  "projectFilePath": "C:\\MyProyect\\SalesOnline\\SalesOnline.Loc\\SalesOnline.Loc.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

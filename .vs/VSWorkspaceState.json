@@ -1,5 +1,8 @@
 {
-  "ExpandedNodes": [],
-  "SelectedNode": "\\SalesOnline.sln",
+  "ExpandedNodes": [
+    "",
+    "\\SalesOnline"
+  ],
+  "SelectedNode": "\\SalesOnline\\SalesOnline.sln",
   "PreviewInSolutionExplorer": false
 }
