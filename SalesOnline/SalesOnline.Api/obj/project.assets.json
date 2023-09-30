@@ -437,23 +437,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\maycol\\.nuget\\packages\\": {},
+    "C:\\Users\\anche\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\MyProyect\\Sistema-ventaWeb\\SalesOnline\\SalesOnline.Api\\SalesOnline.Api.csproj",
+      "projectUniqueName": "C:\\MyProyect\\SalesOnline\\SalesOnline.Api\\SalesOnline.Api.csproj",
       "projectName": "SalesOnline.Api",
-      "projectPath": "C:\\MyProyect\\Sistema-ventaWeb\\SalesOnline\\SalesOnline.Api\\SalesOnline.Api.csproj",
-      "packagesPath": "C:\\Users\\maycol\\.nuget\\packages\\",
-      "outputPath": "C:\\MyProyect\\Sistema-ventaWeb\\SalesOnline\\SalesOnline.Api\\obj\\",
+      "projectPath": "C:\\MyProyect\\SalesOnline\\SalesOnline.Api\\SalesOnline.Api.csproj",
+      "packagesPath": "C:\\Users\\anche\\.nuget\\packages\\",
+      "outputPath": "C:\\MyProyect\\SalesOnline\\SalesOnline.Api\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\maycol\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\anche\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -462,6 +462,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
