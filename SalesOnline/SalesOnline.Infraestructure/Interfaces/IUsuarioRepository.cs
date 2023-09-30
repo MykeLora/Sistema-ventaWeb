@@ -9,5 +9,6 @@ namespace SalesOnline.Infraestructure.Interfaces
     public interface IUsuarioRepository : IBaseRepository<Usuario>
     {
 
+
     }
 }

@@ -14,6 +14,7 @@ namespace SalesOnline.Infraestructure.Repository
             throw new NotImplementedException();
         }
 
+
         public Usuario GetEntity(int id)
         {
             throw new NotImplementedException();
