@@ -10,7 +10,7 @@ namespace SalesOnline.Domain.Repository
         public void Remove(TEntity entity);
         public void Update(TEntity entity);
 
-        List<TEntity> GetEntities();
-        TEntity GetEntity(int id);
+        public  List<TEntity> GetEntities();
+        public TEntity GetEntity(int id);
     }
 }

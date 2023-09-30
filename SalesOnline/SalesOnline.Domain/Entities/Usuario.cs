@@ -5,10 +5,12 @@ using System.Text;
 
 namespace SalesOnline.Domain.Entities
 {
-    public class Usuario : BaseEntity
+    public class Usuario : Person
     {
-        public String? correo { get; set; }
-        public String? clave { get; set; }
-        public int? idRol { get; set; }
+        public bool? esActivo { get; set; }
+        public DateTime? fechaRegistro { get; set; }
+
+
+
     }
 }

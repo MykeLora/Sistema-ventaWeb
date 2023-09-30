@@ -5,10 +5,11 @@ using System.Text;
 
 namespace SalesOnline.Domain.Entities
 {
-    public  class MenuRol : Gestion
+    public class MenuRol : BaseEntity
     {
-        public int idNumeroDocumento { get; set; }
-        public int ultimoNumero { get; set; }
+        public int idMenuRol { get; set; }
+        public int idMenu { get; set;}
+        public int idRol { get; set; }
 
     }
 }

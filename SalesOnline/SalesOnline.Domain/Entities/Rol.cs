@@ -8,5 +8,8 @@ namespace SalesOnline.Domain.Entities
     public class Rol : BaseEntity
     {
         public int idRol { get; set; }
+        public String nombre{ get; set; }
+        public DateTime? FechaRegistro { get; set; }
+
     }
 }
