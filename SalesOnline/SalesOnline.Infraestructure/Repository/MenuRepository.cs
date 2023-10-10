@@ -17,11 +17,6 @@ namespace SalesOnline.Infraestructure.Repository
             throw new System.NotImplementedException();
         }
 
-        public List<Menu> GetProductoByIdMenu(int idMenu)
-        {
-            throw new System.NotImplementedException();
-        }
-
         public void Remove(Menu entity)
         {
             throw new System.NotImplementedException();
