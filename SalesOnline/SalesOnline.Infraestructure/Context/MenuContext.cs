@@ -4,7 +4,8 @@ using SalesOnline.Domain.Entities;
 
 namespace SalesOnline.Infraestructure.Context
 {
-    public class MenuContext : DbContext
+    public class salescontext
+        // antes: MenuContext : DbContext
     {
 
         public DbSet<Menu> Menu { get; set; }
