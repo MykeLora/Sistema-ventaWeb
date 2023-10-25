@@ -1,0 +1,13 @@
+C:\MyProyect\SalesOnline\SalesOnline.Infraestructure\bin\Debug\netstandard2.1\SalesOnline.Infraestructure.deps.json
+C:\MyProyect\SalesOnline\SalesOnline.Infraestructure\bin\Debug\netstandard2.1\SalesOnline.Infraestructure.dll
+C:\MyProyect\SalesOnline\SalesOnline.Infraestructure\bin\Debug\netstandard2.1\SalesOnline.Infraestructure.pdb
+C:\MyProyect\SalesOnline\SalesOnline.Infraestructure\bin\Debug\netstandard2.1\SalesOnline.Domain.dll
+C:\MyProyect\SalesOnline\SalesOnline.Infraestructure\bin\Debug\netstandard2.1\SalesOnline.Domain.pdb
+C:\MyProyect\SalesOnline\SalesOnline.Infraestructure\obj\Debug\netstandard2.1\SalesOnline.Infraestructure.csproj.AssemblyReference.cache
+C:\MyProyect\SalesOnline\SalesOnline.Infraestructure\obj\Debug\netstandard2.1\SalesOnline.Infraestructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\MyProyect\SalesOnline\SalesOnline.Infraestructure\obj\Debug\netstandard2.1\SalesOnline.Infraestructure.AssemblyInfoInputs.cache
+C:\MyProyect\SalesOnline\SalesOnline.Infraestructure\obj\Debug\netstandard2.1\SalesOnline.Infraestructure.AssemblyInfo.cs
+C:\MyProyect\SalesOnline\SalesOnline.Infraestructure\obj\Debug\netstandard2.1\SalesOnline.Infraestructure.csproj.CoreCompileInputs.cache
+C:\MyProyect\SalesOnline\SalesOnline.Infraestructure\obj\Debug\netstandard2.1\SalesOnline.Infraestructure.csproj.CopyComplete
+C:\MyProyect\SalesOnline\SalesOnline.Infraestructure\obj\Debug\netstandard2.1\SalesOnline.Infraestructure.dll
+C:\MyProyect\SalesOnline\SalesOnline.Infraestructure\obj\Debug\netstandard2.1\SalesOnline.Infraestructure.pdb

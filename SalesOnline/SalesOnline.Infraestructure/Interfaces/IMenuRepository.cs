@@ -6,8 +6,8 @@ using System.Text;
 
 namespace SalesOnline.Infraestructure.Interfaces
 {
-    public interface IMenuRepository : IBaseRepository<Menu>
+    public interface IMenuRepository : Domain.Repository.IBaseRepository<Menu>
     {
-      
+       
     }
 }
