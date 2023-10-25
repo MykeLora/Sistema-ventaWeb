@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "BUoNneUAG+ZbiQRQsb5mhFqwP5pvCOawxM1myEfI8Nezm8RUq+rGSAHuCCg11ktq94LTwOGpXhbOgOvFGQPawg==",
+  "dgSpecHash": "T8j+4CBqRzWOXaga442kiSwaTrBYWeAHoem6vU8bZr6/L6peVSQ6P3QjibIqJnMazeTiXm9StO1ujOn6f3N5CQ==",
   "success": true,
   "projectFilePath": "C:\\MyProyect\\SalesOnline\\SalesOnline.Domain\\SalesOnline.Domain.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\anche\\.nuget\\packages\\system.componentmodel.annotations\\4.7.0\\system.componentmodel.annotations.4.7.0.nupkg.sha512"
+  ],
   "logs": []
 }

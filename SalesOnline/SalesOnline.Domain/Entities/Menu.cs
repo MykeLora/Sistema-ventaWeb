@@ -1,12 +1,14 @@
 ﻿using SalesOnline.Domain.Core;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace SalesOnline.Domain.Entities
 {
     public class Menu : BaseEntity
     {
+        [Key]
         public int idMenu { get; set; }
         public String nombre { get; set; }
         public String? icono { get; set; }

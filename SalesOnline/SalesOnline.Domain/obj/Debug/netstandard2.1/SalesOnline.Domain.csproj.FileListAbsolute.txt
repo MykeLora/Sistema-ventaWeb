@@ -7,3 +7,13 @@ C:\MyProyect\Sistema-ventaWeb\SalesOnline\SalesOnline.Domain\obj\Debug\netstanda
 C:\MyProyect\Sistema-ventaWeb\SalesOnline\SalesOnline.Domain\obj\Debug\netstandard2.1\SalesOnline.Domain.csproj.CoreCompileInputs.cache
 C:\MyProyect\Sistema-ventaWeb\SalesOnline\SalesOnline.Domain\obj\Debug\netstandard2.1\SalesOnline.Domain.dll
 C:\MyProyect\Sistema-ventaWeb\SalesOnline\SalesOnline.Domain\obj\Debug\netstandard2.1\SalesOnline.Domain.pdb
+C:\MyProyect\SalesOnline\SalesOnline.Domain\bin\Debug\netstandard2.1\SalesOnline.Domain.deps.json
+C:\MyProyect\SalesOnline\SalesOnline.Domain\bin\Debug\netstandard2.1\SalesOnline.Domain.dll
+C:\MyProyect\SalesOnline\SalesOnline.Domain\bin\Debug\netstandard2.1\SalesOnline.Domain.pdb
+C:\MyProyect\SalesOnline\SalesOnline.Domain\obj\Debug\netstandard2.1\SalesOnline.Domain.csproj.AssemblyReference.cache
+C:\MyProyect\SalesOnline\SalesOnline.Domain\obj\Debug\netstandard2.1\SalesOnline.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\MyProyect\SalesOnline\SalesOnline.Domain\obj\Debug\netstandard2.1\SalesOnline.Domain.AssemblyInfoInputs.cache
+C:\MyProyect\SalesOnline\SalesOnline.Domain\obj\Debug\netstandard2.1\SalesOnline.Domain.AssemblyInfo.cs
+C:\MyProyect\SalesOnline\SalesOnline.Domain\obj\Debug\netstandard2.1\SalesOnline.Domain.csproj.CoreCompileInputs.cache
+C:\MyProyect\SalesOnline\SalesOnline.Domain\obj\Debug\netstandard2.1\SalesOnline.Domain.dll
+C:\MyProyect\SalesOnline\SalesOnline.Domain\obj\Debug\netstandard2.1\SalesOnline.Domain.pdb

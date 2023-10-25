@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using System.Text;
 
 namespace SalesOnline.Domain.Repository
@@ -12,5 +13,7 @@ namespace SalesOnline.Domain.Repository
 
         public  List<TEntity> GetEntities();
         public TEntity GetEntity(int id);
+
+      
     }
 }

@@ -19,7 +19,7 @@ namespace SalesOnline.Infraestructure.Context
         public DbSet<NumeroDocumento> numeroDocuments { get; set; }
         public DbSet<Producto> productos { get; set; }
         public DbSet<Rol> rol { get; set; }
-        public DbSet<Usuario> usuarios { get; set; }
+        public DbSet<Usuario> Usuario { get; set; }
         public DbSet<Venta> ventas { get; set; }
     }
 }

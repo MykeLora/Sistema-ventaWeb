@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\SalesOnline"
+    "\\SalesOnline",
+    "\\SalesOnline\\SalesOnline.Infraestructure"
   ],
   "SelectedNode": "\\SalesOnline\\SalesOnline.sln",
   "PreviewInSolutionExplorer": false
