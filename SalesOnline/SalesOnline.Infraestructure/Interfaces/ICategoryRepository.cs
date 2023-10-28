@@ -3,10 +3,11 @@ using SalesOnline.Domain.Repository;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace SalesOnline.Infraestructure.Interfaces
 {
-    public interface ICategoyRepository : IBaseRepository<Category>
+    public interface ICategoryRepository : IBaseRepository<Category>
     {
         public List<Producto> GetProductosbyid(int idcategoria);
     }

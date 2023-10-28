@@ -1,16 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using System.Text;
 
 namespace SalesOnline.Domain.Repository
 {
     public interface IBaseRepository<TEntity> where TEntity : class
     {
-        public void Save(TEntity entity);
-        public void Remove(TEntity entity);
-        public void Update(TEntity entity);
+        void Save(TEntity entity);
 
-        public  List<TEntity> GetEntities();
-        public TEntity GetEntity(int id);
+        void Update(TEntity entity);
+        void Remove(TEntity entity);
+        List<TEntity> GetEntities();
+        TEntity GetEntity(int Id);
+        bool Exists(Expression<Func<TEntity, bool>> filter);
+        List<TEntity> FindAll(Expression<Func<TEntity, bool>> filter);
+
     }
 }

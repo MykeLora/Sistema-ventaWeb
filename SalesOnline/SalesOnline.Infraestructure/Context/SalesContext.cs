@@ -14,7 +14,7 @@ namespace SalesOnline.Infraestructure.Context
 
         public DbSet<DetalleVenta> detalleVentas { get; set; }
 
-       public DbSet<Menu> Menus { get; set; }
+        public DbSet<Menu> Menus { get; set; }
         public DbSet<MenuRol> menuRols { get; set; }
         public DbSet<NumeroDocumento> numeroDocuments { get; set; }
         public DbSet<Producto> productos { get; set; }
