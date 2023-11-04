@@ -10,7 +10,7 @@ namespace SalesOnline.Domain.Entities
     {
         [Key]
         public int idRol { get; set; }
-        public String nombre{ get; set; }
+        public String? nombre{ get; set; }
        
 
     }

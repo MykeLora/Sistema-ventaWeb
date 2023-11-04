@@ -93,3 +93,11 @@ C:\MyProyect\SalesOnline\SalesOnline.Api\bin\Debug\net6.0\SalesOnline.Domain.dll
 C:\MyProyect\SalesOnline\SalesOnline.Api\bin\Debug\net6.0\SalesOnline.Infraestructure.dll
 C:\MyProyect\SalesOnline\SalesOnline.Api\bin\Debug\net6.0\SalesOnline.Infraestructure.pdb
 C:\MyProyect\SalesOnline\SalesOnline.Api\bin\Debug\net6.0\SalesOnline.Domain.pdb
+C:\MyProyect\SalesOnline\SalesOnline.Api\bin\Debug\net6.0\BoDi.dll
+C:\MyProyect\SalesOnline\SalesOnline.Api\bin\Debug\net6.0\Gherkin.dll
+C:\MyProyect\SalesOnline\SalesOnline.Api\bin\Debug\net6.0\Microsoft.DotNet.PlatformAbstractions.dll
+C:\MyProyect\SalesOnline\SalesOnline.Api\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+C:\MyProyect\SalesOnline\SalesOnline.Api\bin\Debug\net6.0\TechTalk.SpecFlow.dll
+C:\MyProyect\SalesOnline\SalesOnline.Api\bin\Debug\net6.0\SpecFlow.Internal.Json.dll
+C:\MyProyect\SalesOnline\SalesOnline.Api\bin\Debug\net6.0\SalesOnline.Application.dll
+C:\MyProyect\SalesOnline\SalesOnline.Api\bin\Debug\net6.0\SalesOnline.Application.pdb

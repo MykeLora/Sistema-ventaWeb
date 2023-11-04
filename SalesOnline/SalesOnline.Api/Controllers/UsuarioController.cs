@@ -16,14 +16,7 @@ namespace SalesOnline.API.Controllers
         public UsuarioController(IUsuarioRepository usuarioRepository)
         {
             this.usuarioRepository = usuarioRepository;
-        }
-
-        [HttpGet("GetUsuariosByUsuarioid")]
-        public IActionResult GetUsuariosByUsuarioid(int Usuarioid)
-        {
-            var Usuarios = this.usuarioRepository.GetUsuariosByidUsuario(Usuarioid);
-            return Ok(Usuarios);
-        }
+        }        
 
         // GET: api/<UsuarioController>
         [HttpGet]

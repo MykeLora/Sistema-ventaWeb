@@ -1,0 +1,15 @@
+C:\MyProyect\SalesOnline\SalesOnline.Application\bin\Debug\netstandard2.1\SalesOnline.Application.deps.json
+C:\MyProyect\SalesOnline\SalesOnline.Application\bin\Debug\netstandard2.1\SalesOnline.Application.dll
+C:\MyProyect\SalesOnline\SalesOnline.Application\bin\Debug\netstandard2.1\SalesOnline.Application.pdb
+C:\MyProyect\SalesOnline\SalesOnline.Application\bin\Debug\netstandard2.1\SalesOnline.Domain.dll
+C:\MyProyect\SalesOnline\SalesOnline.Application\bin\Debug\netstandard2.1\SalesOnline.Infraestructure.dll
+C:\MyProyect\SalesOnline\SalesOnline.Application\bin\Debug\netstandard2.1\SalesOnline.Infraestructure.pdb
+C:\MyProyect\SalesOnline\SalesOnline.Application\bin\Debug\netstandard2.1\SalesOnline.Domain.pdb
+C:\MyProyect\SalesOnline\SalesOnline.Application\obj\Debug\netstandard2.1\SalesOnline.Application.csproj.AssemblyReference.cache
+C:\MyProyect\SalesOnline\SalesOnline.Application\obj\Debug\netstandard2.1\SalesOnline.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\MyProyect\SalesOnline\SalesOnline.Application\obj\Debug\netstandard2.1\SalesOnline.Application.AssemblyInfoInputs.cache
+C:\MyProyect\SalesOnline\SalesOnline.Application\obj\Debug\netstandard2.1\SalesOnline.Application.AssemblyInfo.cs
+C:\MyProyect\SalesOnline\SalesOnline.Application\obj\Debug\netstandard2.1\SalesOnline.Application.csproj.CoreCompileInputs.cache
+C:\MyProyect\SalesOnline\SalesOnline.Application\obj\Debug\netstandard2.1\SalesOnline.Application.csproj.CopyComplete
+C:\MyProyect\SalesOnline\SalesOnline.Application\obj\Debug\netstandard2.1\SalesOnline.Application.dll
+C:\MyProyect\SalesOnline\SalesOnline.Application\obj\Debug\netstandard2.1\SalesOnline.Application.pdb

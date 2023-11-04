@@ -8,6 +8,9 @@ namespace SalesOnline.Domain.Entities
 {
     public class Usuario : Person
     {
+        public string? nombre;
+        public object? usuarioid;
+
         [Key]
         public int idUsuario {  get; set; }
         

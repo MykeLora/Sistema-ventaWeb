@@ -15,6 +15,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<SalesContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("SalesContext")));
 
 // Dependencia de los repositorios //
+
 builder.Services.AddTransient<IUsuarioRepository, UsuarioRepository>();
 
 

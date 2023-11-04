@@ -13,4 +13,8 @@
     <SourceRoot Include="C:\Users\anche\.nuget\packages\" />
     <SourceRoot Include="C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages\" />
   </ItemGroup>
+  <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <PkgNewtonsoft_Json Condition=" '$(PkgNewtonsoft_Json)' == '' ">C:\Users\anche\.nuget\packages\newtonsoft.json\9.0.1</PkgNewtonsoft_Json>
+    <PkgBoDi Condition=" '$(PkgBoDi)' == '' ">C:\Users\anche\.nuget\packages\bodi\1.5.0</PkgBoDi>
+  </PropertyGroup>
 </Project>

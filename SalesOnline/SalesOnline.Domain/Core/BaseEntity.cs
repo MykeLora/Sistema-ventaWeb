@@ -4,8 +4,7 @@ using System;
 namespace SalesOnline.Domain.Core
 {
    public  abstract class BaseEntity
-    {
-        public DateTime? fechaRegistro { get; set; }
+    {        
         public int IdUsuarioCreacion { get; set; }
         public DateTime? FechaMod { get; set; }
         public int? IdUsuarioMod { get; set; }
