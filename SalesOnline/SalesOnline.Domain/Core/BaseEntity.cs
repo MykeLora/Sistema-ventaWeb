@@ -1,20 +1,17 @@
 ﻿
-using System;
 
-namespace SalesOnline.Domain.Core
+namespace SalesOnline.Application.Models
 {
-   public  abstract class BaseEntity
+    public class ProductGetModel
     {
-        public BaseEntity()
-        {
-            this.fechaRegistro = DateTime.Now;
-            this.Nombre = null;
-        }
-
-        public virtual string? Nombre { get; set; }
-        public DateTime? fechaRegistro { get; set; }
-        public int? esActivo { get; set; }
-        
+        public int ProductoId { get; set; }
+        public string? CodigoBarra { get; set; }
+        public string? Marca { get; set; }
+        public string? Descripcion { get; set; }
+        public int? Stock { get; set; }
+        public string? UrlImagen { get; set; }
+        public string? NombreImagen { get; set; }
+        public decimal? Precio { get; set; }
 
 
 

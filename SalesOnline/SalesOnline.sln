@@ -25,7 +25,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SalesOnline.Loc", "SalesOnl
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SalesOnline.Web", "SalesOnline.Web\SalesOnline.Web.csproj", "{DFEEFD7A-642F-4682-B456-D388CF018C28}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesOnline.Api", "SalesOnline.Api\SalesOnline.Api.csproj", "{16D7CDEF-5C22-449F-96DC-E6C3B7C87E33}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SalesOnline.Api", "SalesOnline.Api\SalesOnline.Api.csproj", "{16D7CDEF-5C22-449F-96DC-E6C3B7C87E33}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Models", "Models", "{8D2E49C1-0B16-4BA7-9D8B-5E196F7B007C}"
+	ProjectSection(SolutionItems) = preProject
+		MenuModel.cs = MenuModel.cs
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -68,6 +73,7 @@ Global
 		{7B378A39-A988-4054-BED0-AC2466B2ACAC} = {626FA8C3-0287-4275-99F0-9CD5C58F1C28}
 		{DFEEFD7A-642F-4682-B456-D388CF018C28} = {9283A9AE-F1CC-4114-84A3-B50231DD5851}
 		{16D7CDEF-5C22-449F-96DC-E6C3B7C87E33} = {16B3AF5B-8550-4193-A5E9-071820550142}
+		{8D2E49C1-0B16-4BA7-9D8B-5E196F7B007C} = {1A0D8C84-06F2-42C5-A941-A67D43C9C3BB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CFBBB263-6B39-4CCF-AE7E-51AA8942F9DE}
