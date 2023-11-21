@@ -4,12 +4,13 @@ using System;
 
 namespace SalesOnline.Application.Core
 {
-    public interface IBaseService<TDoAdd, TDoUpdate, TDoRemove>
+    public interface IBaseService<TDtoAdd, TDtoUpdate, TDtoRemove>
     {
-        ServicesResult GetAll();
-        ServicesResult GetById(int id);
-        ServicesResult Save(TDoAdd dtoAdd);
-        ServicesResult Update(TDoUpdate dtoUpdate);
-        ServicesResult Remove(TDoRemove dtoRemove);
+        ServiceResult GetAll();
+        ServiceResult GetById(int Id);
+        ServiceResult Save(TDtoAdd dtoAdd);
+        ServiceResult Update(TDtoUpdate dtoUpdate);
+        ServiceResult Remove(TDtoRemove dtoRemove);
+
     }
 }

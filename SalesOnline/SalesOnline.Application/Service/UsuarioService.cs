@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Linq;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using SalesOnline.Application.Contract;
 using SalesOnline.Application.Core;
 using SalesOnline.Application.Dtos.Usuario;
+using SalesOnline.Application.Excepctions;
 using SalesOnline.Domain.Entities;
 using SalesOnline.Infraestructure.Interfaces;
 
@@ -14,18 +16,21 @@ namespace SalesOnline.Application.Service
     {
         private readonly IUsuarioRepository usuarioRepository;        
         private readonly ILogger<UsuarioService> logger;
+        private readonly IConfiguration configuration;
 
         public UsuarioService(IUsuarioRepository usuarioRepository,                              
-                              ILogger<UsuarioService> logger)
+                              ILogger<UsuarioService> logger,
+                              IConfiguration configuration)
         {
             this.usuarioRepository = usuarioRepository;            
             this.logger = logger;
+            this.configuration = configuration;
         }
 
 
-        public ServicesResult GetAll()
+        public ServiceResult GetAll()
         {
-            ServicesResult result = new ServicesResult();
+            ServiceResult result = new ServiceResult();
             try
             {
                 result.Data = this.usuarioRepository.GetUsuariosRol();
@@ -39,9 +44,9 @@ namespace SalesOnline.Application.Service
             return result;
         }
 
-        public ServicesResult GetById(int id)
+        public ServiceResult GetById(int id)
         {
-            ServicesResult result = new ServicesResult();
+            ServiceResult result = new ServiceResult();
 
             try 
             {
@@ -57,18 +62,18 @@ namespace SalesOnline.Application.Service
 
         }
 
-        public ServicesResult Remove(UsuarioDtoRemove dtoRemove)
+        public ServiceResult Remove(UsuarioDtoRemove dtoRemove)
         {
-            ServicesResult result= new ServicesResult();
+            ServiceResult result= new ServiceResult();
 
             try 
             {
                 Usuario usuario = new Usuario()
                 {
                     idUsuario = dtoRemove.idUsuario,
-                    IdUsuarioElimino = dtoRemove.IdUsuarioElimino,
-                    FechaElimino = dtoRemove.FechaElimino,
-                    Eliminado = dtoRemove.Eliminado
+                    Eliminado = dtoRemove.Eliminado,
+                    IdUsuarioElimino = dtoRemove.idUsuario,
+                    FechaElimino = dtoRemove.FechaMod
 
                 };
                 this.usuarioRepository.Remove(usuario);
@@ -85,23 +90,38 @@ namespace SalesOnline.Application.Service
             return result;
         }
 
-        public ServicesResult Save(UsuarioDtoAdd dtoAdd)
+        public ServiceResult Save(UsuarioDtoAdd dtoAdd)
         {
-            ServicesResult result = new ServicesResult();
+            ServiceResult result = new ServiceResult();
 
             try
             {
+                if (string.IsNullOrEmpty(dtoAdd.nombre))
+                    throw new UsuarioServiceExcepcion(this.configuration["MensajeValidaciones:usuarioNombreRequerido"]);
+
+
+                if (dtoAdd.nombre.Length > 100)
+                    throw new UsuarioServiceExcepcion(this.configuration["MensajeValidaciones:usuarioNombreLongitud"]);
+
+
                 Usuario usuario = new Usuario()
                 {
-                    nombreCompleto = dtoAdd.nombreCompleto,
+                    idUsuario = dtoAdd.idUsuario,
+                    nombreCompleto = dtoAdd.nombre,
                     correo = dtoAdd.correo,
                     clave = dtoAdd.clave,
                     idRol = dtoAdd.idRol,
-                    fechaRegistro = dtoAdd.fechaRegistro
+                    fechaRegistro = dtoAdd.fechaRegistro,                    
                 };
                 this.usuarioRepository.Save(usuario);
 
                 result.Message = "El Usuario fue Guardado correctamente";
+            }
+            catch (UsuarioServiceExcepcion cex)
+            {
+                result.Success = false;
+                result.Message = cex.Message;
+                this.logger.LogError($"{result.Message}", cex.ToString());
             }
             catch (Exception ex)
             {
@@ -113,21 +133,27 @@ namespace SalesOnline.Application.Service
             return result;
         }
 
-        public ServicesResult Update(UsuarioDtoUpdate dtoUpdate)
+        public ServiceResult Update(UsuarioDtoUpdate dtoUpdate)
         {
-            ServicesResult result = new ServicesResult();
+            ServiceResult result = new ServiceResult();
 
             try
             {
+                if (string.IsNullOrEmpty(dtoUpdate.nombre))
+                    throw new UsuarioServiceExcepcion(this.configuration["MensajeValidaciones:UsuarioNombreRequerido"]);
+
+
+                if (dtoUpdate.nombre.Length > 100)
+                    throw new UsuarioServiceExcepcion(this.configuration["MensajeValidaciones:UsuarioNombreLongitud"]);
+
                 Usuario usuario = new Usuario()
                 {
                     idUsuario = dtoUpdate.idUsuario,
-                    nombreCompleto = dtoUpdate.nombreCompleto,
+                    nombreCompleto = dtoUpdate.nombre,
                     correo = dtoUpdate.correo,
                     clave = dtoUpdate.clave,
                     idRol = dtoUpdate.idRol,
-                    FechaMod = dtoUpdate.FechaMod,
-                    IdUsuarioMod = dtoUpdate.IdUsuarioMod
+                    fechaRegistro = dtoUpdate.fechaRegistro,
                 };
                 this.usuarioRepository.Update(usuario);
 

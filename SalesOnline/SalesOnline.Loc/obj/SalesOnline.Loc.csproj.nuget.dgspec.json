@@ -35,6 +35,9 @@
             "projectReferences": {
               "C:\\MyProyect\\SalesOnline\\SalesOnline.Application\\SalesOnline.Application.csproj": {
                 "projectPath": "C:\\MyProyect\\SalesOnline\\SalesOnline.Application\\SalesOnline.Application.csproj"
+              },
+              "C:\\MyProyect\\SalesOnline\\SalesOnline.Domain\\SalesOnline.Domain.csproj": {
+                "projectPath": "C:\\MyProyect\\SalesOnline\\SalesOnline.Domain\\SalesOnline.Domain.csproj"
               }
             }
           }
@@ -296,6 +299,7 @@
         "packagesPath": "C:\\Users\\anche\\.nuget\\packages\\",
         "outputPath": "C:\\MyProyect\\SalesOnline\\SalesOnline.Loc\\obj\\",
         "projectStyle": "PackageReference",
+        "crossTargeting": true,
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
@@ -305,7 +309,7 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "netstandard2.1"
+          "net6.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -313,14 +317,11 @@
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "netstandard2.1": {
-            "targetAlias": "netstandard2.1",
+          "net6.0": {
+            "targetAlias": "net6.0",
             "projectReferences": {
               "C:\\MyProyect\\SalesOnline\\SalesOnline.Api\\SalesOnline.Api.csproj": {
                 "projectPath": "C:\\MyProyect\\SalesOnline\\SalesOnline.Api\\SalesOnline.Api.csproj"
-              },
-              "C:\\MyProyect\\SalesOnline\\SalesOnline.Application\\SalesOnline.Application.csproj": {
-                "projectPath": "C:\\MyProyect\\SalesOnline\\SalesOnline.Application\\SalesOnline.Application.csproj"
               }
             }
           }
@@ -332,8 +333,8 @@
         }
       },
       "frameworks": {
-        "netstandard2.1": {
-          "targetAlias": "netstandard2.1",
+        "net6.0": {
+          "targetAlias": "net6.0",
           "imports": [
             "net461",
             "net462",
@@ -346,7 +347,7 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
-            "NETStandard.Library": {
+            "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },

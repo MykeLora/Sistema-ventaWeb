@@ -15,17 +15,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Api", "Api", "{16B3AF5B-855
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{9283A9AE-F1CC-4114-84A3-B50231DD5851}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Loc", "Loc", "{626FA8C3-0287-4275-99F0-9CD5C58F1C28}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ioc", "Ioc", "{626FA8C3-0287-4275-99F0-9CD5C58F1C28}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SalesOnline.Infraestructure", "SalesOnline.Infraestructure\SalesOnline.Infraestructure.csproj", "{865D30E4-3FCF-4226-B4BE-31D30C43E556}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SalesOnline.Application", "SalesOnline.Application\SalesOnline.Application.csproj", "{A5E78D8D-258B-4195-8C0A-730B778FF400}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SalesOnline.Loc", "SalesOnline.Loc\SalesOnline.Loc.csproj", "{7B378A39-A988-4054-BED0-AC2466B2ACAC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SalesOnline.Ioc", "SalesOnline.Loc\SalesOnline.Ioc.csproj", "{7B378A39-A988-4054-BED0-AC2466B2ACAC}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SalesOnline.Web", "SalesOnline.Web\SalesOnline.Web.csproj", "{DFEEFD7A-642F-4682-B456-D388CF018C28}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesOnline.Api", "SalesOnline.Api\SalesOnline.Api.csproj", "{16D7CDEF-5C22-449F-96DC-E6C3B7C87E33}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SalesOnline.Api", "SalesOnline.Api\SalesOnline.Api.csproj", "{16D7CDEF-5C22-449F-96DC-E6C3B7C87E33}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,8 +1,8 @@
 ﻿namespace SalesOnline.Api.Models.Core
 {
-    public class ModelBase
+    public abstract class ModelBase
     {
-        public int ChangeUser {  get; set; }
-        public DateTime ChanageDate { get; set; }
+        public int IdUsuarioMod {  get; set; }
+        public DateTime? FechaMod { get; set; }
     }
 }

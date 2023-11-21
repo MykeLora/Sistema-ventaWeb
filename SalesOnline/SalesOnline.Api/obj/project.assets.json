@@ -7570,6 +7570,8 @@
   "projectFileDependencyGroups": {
     "net6.0": [
       "SalesOnline.Application >= 1.0.0",
+      "SalesOnline.Domain >= 1.0.0",
+      "SalesOnline.Infraestructure >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.5.0"
     ]
   },
@@ -7608,6 +7610,12 @@
           "projectReferences": {
             "C:\\MyProyect\\SalesOnline\\SalesOnline.Application\\SalesOnline.Application.csproj": {
               "projectPath": "C:\\MyProyect\\SalesOnline\\SalesOnline.Application\\SalesOnline.Application.csproj"
+            },
+            "C:\\MyProyect\\SalesOnline\\SalesOnline.Domain\\SalesOnline.Domain.csproj": {
+              "projectPath": "C:\\MyProyect\\SalesOnline\\SalesOnline.Domain\\SalesOnline.Domain.csproj"
+            },
+            "C:\\MyProyect\\SalesOnline\\SalesOnline.Infraestructure\\SalesOnline.Infraestructure.csproj": {
+              "projectPath": "C:\\MyProyect\\SalesOnline\\SalesOnline.Infraestructure\\SalesOnline.Infraestructure.csproj"
             }
           }
         }

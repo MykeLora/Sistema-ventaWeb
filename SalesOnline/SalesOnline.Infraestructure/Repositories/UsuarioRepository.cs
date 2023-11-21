@@ -18,38 +18,47 @@ namespace SalesOnline.Infraestructure.Repositories
             this.context = context;
         }
 
-        public override List<Usuario> GetEntities()
+        public UsuarioRolModel GetUsuarioRol(int Id)
         {
-            return base.GetEntities().Where(usu => !usu.Eliminado).ToList();
-        }        
-
-        
-        public List<Usuario> GetUsuariosByidUsuario(int idUsuario)
-        {
-            return this.context.Usuario.Where(usu => usu.idUsuario == idUsuario && !usu.Eliminado).ToList();
+            return this.GetUsuariosRol().SingleOrDefault(usu => usu.idUsuario == Id);
         }
+
+        public List<Usuario> GetUsuariosByRol(int idRol)
+        {
+            return this.context.Usuario.Where(cd => cd.idRol == idRol
+                                              && !cd.Eliminado).ToList();
+        }
+
 
         public List<UsuarioRolModel> GetUsuariosByidRol(int idRol)
         {
-            throw new NotImplementedException();
+            return this.GetUsuariosRol().Where(cd => cd.idRol == idRol).ToList();
         }
+
+
         public List<UsuarioRolModel> GetUsuariosRol()
         {
-            var usuarios = (from usu in this.GetEntities()
-                            join rol in this.context.rol on usu.idRol equals rol.idRol
-                            where !usu.Eliminado
-                            select new UsuarioRolModel()
-                            {
-                                idUsuario = usu.idUsuario,
-                                nombreCompleto = usu.nombreCompleto,
-                                correo = usu.correo,
-                                clave = usu.clave,
-                                idRol = usu.idRol,
-                                Rol = rol.nombre,
-                                fechaRegistro = usu.fechaRegistro
-                            }).ToList();
 
-            return usuarios;
+            var usuario = (from usu in this.GetEntities()
+                           join rol in this.context.rol on usu.idRol equals rol.idRol
+                           where !usu.Eliminado
+                           select new UsuarioRolModel()
+                           {
+                               nombre = usu.nombreCompleto,
+                               correo = usu.correo,
+                               clave = usu.clave,
+                               idRol = usu.idRol,
+                               fechaRegistro = usu.fechaRegistro,
+                               IdUsuarioCreacion = usu.IdUsuarioMod
+                           }).ToList();
+
+
+            return usuario;
+        }
+
+        public override List<Usuario> GetEntities()
+        {
+            return base.GetEntities().Where(usu => !usu.Eliminado).ToList();
         }
 
         public override void Save(Usuario entity)
@@ -57,6 +66,7 @@ namespace SalesOnline.Infraestructure.Repositories
             base.Save(entity);
             this.context.SaveChanges();
         }
+
         public override void Update(Usuario entity)
         {
             Usuario usuario = this.GetEntity(entity.idUsuario);

@@ -1,14 +1,12 @@
-﻿
-
+﻿using SalesOnline.Application.Dtos.Base;
 using System;
 
 namespace SalesOnline.Application.Dtos.Usuario
 {
-    public class UsuarioDtoRemove
+    public class UsuarioDtoRemove : DtoBase
     {
-        public int idUsuario { get; set; }
-        public int? IdUsuarioElimino { get; set; }
-        public DateTime? FechaElimino { get; set; }
+        public int idUsuario { get; set; }                
         public bool Eliminado { get; set; }
+        
     }
 }

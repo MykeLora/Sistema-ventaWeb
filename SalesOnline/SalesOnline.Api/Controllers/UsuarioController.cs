@@ -1,9 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using SalesOnline.Api.Models.Module_Usuario;
-using SalesOnline.Domain.Entities;
-using SalesOnline.Infraestructure.Interfaces;
+using SalesOnline.Application.Contract;
+using SalesOnline.Application.Dtos.Usuario;
 
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+
 
 namespace SalesOnline.API.Controllers
 {
@@ -11,74 +10,83 @@ namespace SalesOnline.API.Controllers
     [ApiController]
     public class UsuarioController : ControllerBase
     {
-        private readonly IUsuarioRepository usuarioRepository;
+        private readonly IUsuarioService usuarioService;
 
-        public UsuarioController(IUsuarioRepository usuarioRepository)
+        public UsuarioController(IUsuarioService usuarioService)
         {
-            this.usuarioRepository = usuarioRepository;
-        }        
+            this.usuarioService = usuarioService;
+        }
 
         // GET: api/<UsuarioController>
-        [HttpGet]
+        [HttpGet("GetUsuarios")]
         public IActionResult GetUsuarios()
         {
-            var usuario = this.usuarioRepository.GetEntities().Select(Usuario => new UsuarioGetAllModel()
-            {
-                Usuarioid = Usuario.idUsuario,
-                ChanageDate = Usuario.fechaRegistro,
-                IdUsuarioCreacion = Usuario.IdUsuarioCreacion,
-                clave = Usuario.clave,
-                nombreCompleto = Usuario.nombreCompleto,
-                correo = Usuario.correo,
-                idRol = Usuario.idRol                
-            }).ToList();
+            var result = this.usuarioService.GetAll();
 
-            return Ok(usuario);
+            if (!result.Success)
+            {
+                return BadRequest(result);
+            }
+
+            return Ok(result);
         }
 
         // GET api/<UsuarioController>/5
         [HttpGet("GetUsuario")]
         public IActionResult GetUsuario(int id)
         {
-            var usuario = this.usuarioRepository.GetEntity(id);
-            return Ok(usuario);
-        }
-        [HttpPost("SaveUsuario")]
-        public IActionResult Post([FromBody] UsuarioAddModel usuarioAdd)
-        {
+            var result = this.usuarioService.GetById(id);
 
-            Usuario usuario = new Usuario()
+            if (!result.Success)
             {
-                fechaRegistro = usuarioAdd.fechaRegistro,
-                IdUsuarioCreacion = usuarioAdd.ChangeUser,
-                clave = usuarioAdd.clave,
-                nombreCompleto = usuarioAdd.nombreCompleto,
-                correo = usuarioAdd.correo,
-                idRol = usuarioAdd.idRol
-            };
-            this.usuarioRepository.Save(usuario);
+                return BadRequest(result);
+            }
 
-            return Ok();
+            return Ok(result);
+        }
+
+
+        [HttpPost("SaveUsuario")]
+        public IActionResult Post([FromBody] UsuarioDtoAdd usuarioAdd)
+        {
+            var result = this.usuarioService.Save(usuarioAdd);
+
+            if (!result.Success)
+            {
+                return BadRequest(result);
+            }
+
+            return Ok(result);
         }
 
 
         // POST api/<UsuarioController>
         [HttpPost("UpdateUsuario")]
-        public IActionResult Put([FromBody] UsuarioUpdateModel UsuarioUpdate)
+        public IActionResult Put([FromBody] UsuarioDtoUpdate usuarioUpdate)
         {
-            Usuario usuario = new Usuario()
+            var result = this.usuarioService.Update(usuarioUpdate);
+
+            if (!result.Success)
             {
-                fechaRegistro = UsuarioUpdate.fechaRegistro,
-                IdUsuarioCreacion = UsuarioUpdate.ChangeUser,
-                clave = UsuarioUpdate.clave,
-                nombreCompleto = UsuarioUpdate.nombreCompleto,
-                correo = UsuarioUpdate.correo,
-                idRol = UsuarioUpdate.idRol
-            };
+                return BadRequest(result);
+            }
 
-            this.usuarioRepository.Update(usuario);
+            return Ok(result);
+        }
 
-            return Ok();
+        [HttpPost("RemoveUsuario")]
+        public IActionResult Put([FromBody] UsuarioDtoRemove usuarioDtoRemove)
+        {
+
+            var result = this.usuarioService.Remove(usuarioDtoRemove);
+
+            if (!result.Success)
+            {
+                return BadRequest(result);
+            }
+
+            return Ok(result);
+
         }
     }
 

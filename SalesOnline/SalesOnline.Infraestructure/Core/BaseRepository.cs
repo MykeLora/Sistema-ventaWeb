@@ -1,11 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Internal;
 using SalesOnline.Domain.Repository;
 using SalesOnline.Infraestructure.Context;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
+
 
 namespace SalesOnline.Infraestructure.Core
 {

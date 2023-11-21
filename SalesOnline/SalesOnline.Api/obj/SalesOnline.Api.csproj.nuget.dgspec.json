@@ -35,6 +35,12 @@
             "projectReferences": {
               "C:\\MyProyect\\SalesOnline\\SalesOnline.Application\\SalesOnline.Application.csproj": {
                 "projectPath": "C:\\MyProyect\\SalesOnline\\SalesOnline.Application\\SalesOnline.Application.csproj"
+              },
+              "C:\\MyProyect\\SalesOnline\\SalesOnline.Domain\\SalesOnline.Domain.csproj": {
+                "projectPath": "C:\\MyProyect\\SalesOnline\\SalesOnline.Domain\\SalesOnline.Domain.csproj"
+              },
+              "C:\\MyProyect\\SalesOnline\\SalesOnline.Infraestructure\\SalesOnline.Infraestructure.csproj": {
+                "projectPath": "C:\\MyProyect\\SalesOnline\\SalesOnline.Infraestructure\\SalesOnline.Infraestructure.csproj"
               }
             }
           }
