@@ -1,23 +1,11 @@
 {
   "Version": 1,
-  "Hash": "PTp3Y75hpe69ovoJoxkMDA4xM5mhkwymVlSMjx83vpE=",
+  "Hash": "5lfF0KWfgYn3FiESLPJpVMzszP9tfdeAlKijyXRWaPo=",
   "Source": "SalesOnline.Web",
   "BasePath": "_content/SalesOnline.Web",
   "Mode": "Default",
   "ManifestType": "Build",
-  "ReferencedProjectsConfiguration": [
-    {
-      "Identity": "C:\\MyProyect\\SalesOnline\\SalesOnline.Api\\SalesOnline.Api.csproj",
-      "Version": 2,
-      "Source": "SalesOnline.Api",
-      "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
-      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
-      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework",
-      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
-      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
-      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework"
-    }
-  ],
+  "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [
     {
       "Name": "SalesOnline.Web\\wwwroot",

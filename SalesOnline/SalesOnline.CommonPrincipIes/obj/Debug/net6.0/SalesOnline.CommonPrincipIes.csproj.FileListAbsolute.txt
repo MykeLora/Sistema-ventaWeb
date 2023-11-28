@@ -1,0 +1,11 @@
+C:\MyProyect\SalesOnline\SalesOnline.CommonPrincipIes\bin\Debug\net6.0\SalesOnline.CommonPrincipIes.deps.json
+C:\MyProyect\SalesOnline\SalesOnline.CommonPrincipIes\bin\Debug\net6.0\SalesOnline.CommonPrincipIes.dll
+C:\MyProyect\SalesOnline\SalesOnline.CommonPrincipIes\bin\Debug\net6.0\SalesOnline.CommonPrincipIes.pdb
+C:\MyProyect\SalesOnline\SalesOnline.CommonPrincipIes\obj\Debug\net6.0\SalesOnline.CommonPrincipIes.GeneratedMSBuildEditorConfig.editorconfig
+C:\MyProyect\SalesOnline\SalesOnline.CommonPrincipIes\obj\Debug\net6.0\SalesOnline.CommonPrincipIes.AssemblyInfoInputs.cache
+C:\MyProyect\SalesOnline\SalesOnline.CommonPrincipIes\obj\Debug\net6.0\SalesOnline.CommonPrincipIes.AssemblyInfo.cs
+C:\MyProyect\SalesOnline\SalesOnline.CommonPrincipIes\obj\Debug\net6.0\SalesOnline.CommonPrincipIes.csproj.CoreCompileInputs.cache
+C:\MyProyect\SalesOnline\SalesOnline.CommonPrincipIes\obj\Debug\net6.0\SalesOnline.CommonPrincipIes.dll
+C:\MyProyect\SalesOnline\SalesOnline.CommonPrincipIes\obj\Debug\net6.0\refint\SalesOnline.CommonPrincipIes.dll
+C:\MyProyect\SalesOnline\SalesOnline.CommonPrincipIes\obj\Debug\net6.0\SalesOnline.CommonPrincipIes.pdb
+C:\MyProyect\SalesOnline\SalesOnline.CommonPrincipIes\obj\Debug\net6.0\ref\SalesOnline.CommonPrincipIes.dll

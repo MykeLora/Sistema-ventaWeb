@@ -9,8 +9,6 @@
       "SalesOnline.Api/1.0.0": {
         "dependencies": {
           "SalesOnline.Application": "1.0.0",
-          "SalesOnline.Domain": "1.0.0",
-          "SalesOnline.Infraestructure": "1.0.0",
           "Swashbuckle.AspNetCore": "6.5.0"
         },
         "runtime": {

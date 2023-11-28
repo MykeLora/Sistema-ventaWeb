@@ -3,7 +3,6 @@ using SalesOnline.Application.Contract;
 using SalesOnline.Application.Dtos.Usuario;
 
 
-
 namespace SalesOnline.API.Controllers
 {
     [Route("api/[controller]")]
@@ -90,6 +89,6 @@ namespace SalesOnline.API.Controllers
         }
     }
 
-   
+
 
 }

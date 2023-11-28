@@ -1,8 +1,6 @@
 ﻿using SalesOnline.Domain.Core;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Text;
 
 namespace SalesOnline.Domain.Entities
 {
@@ -10,8 +8,8 @@ namespace SalesOnline.Domain.Entities
     {
         [Key]
         public int idRol { get; set; }
-        public String? nombre{ get; set; }
-       
+        public String? nombre { get; set; }
+
 
     }
 }

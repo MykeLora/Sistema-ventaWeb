@@ -2,9 +2,9 @@
 
 namespace SalesOnline.Application.Core
 {
-    public class ServiceResult 
+    public class ServiceResult
     {
-        public ServiceResult() 
+        public ServiceResult()
         {
             this.Success = true;
         }

@@ -2,24 +2,22 @@
 using SalesOnline.Application.Core;
 using SalesOnline.Application.Dtos.Usuario;
 using SalesOnline.Application.Excepctions;
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 namespace SalesOnline.Application.Extentions
 {
     public static class ValidationUsuarioExtention
     {
-        public static ServiceResult IsStudentValid(this UsuarioDtoBase dtoBase, IConfiguration configuration)
+        public static ServiceResult IsUsuarioValid(this UsuarioDtoBase dtoBase, IConfiguration configuration)
         {
 
-            ServiceResult serviceResult = new ServiceResult();
+            ServiceResult Result = new ServiceResult();
 
-            if (string.IsNullOrEmpty(dtoBase.nombre))
+            if (string.IsNullOrEmpty(dtoBase.nombreCompleto))
                 throw new UsuarioServiceExcepcion(configuration["MensajeValidaciones:UsuarioNombreRequerido"]);
 
 
-            if (dtoBase.nombre.Length > 50)
+            if (dtoBase.nombreCompleto.Length > 50)
                 throw new UsuarioServiceExcepcion(configuration["MensajeValidaciones:UsuarioNombreLongitud"]);
 
             if (string.IsNullOrEmpty(dtoBase.correo))
@@ -33,8 +31,8 @@ namespace SalesOnline.Application.Extentions
 
 
 
-            return serviceResult;
+            return Result;
         }
     }
 }
-}
+

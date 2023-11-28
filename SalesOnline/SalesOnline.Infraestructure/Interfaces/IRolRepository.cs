@@ -5,6 +5,6 @@ namespace SalesOnline.Infraestructure.Interfaces
 {
     public interface IRolRepository : IBaseRepository<Rol>
     {
-        
+
     }
 }

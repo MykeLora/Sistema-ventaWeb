@@ -1,11 +1,10 @@
-﻿using System;
-using SalesOnline.Domain.Entities;
+﻿using SalesOnline.Domain.Entities;
 using SalesOnline.Infraestructure.Context;
 using SalesOnline.Infraestructure.Core;
 using SalesOnline.Infraestructure.Interfaces;
+using SalesOnline.Infraestructure.Models;
 using System.Collections.Generic;
 using System.Linq;
-using SalesOnline.Infraestructure.Models;
 
 namespace SalesOnline.Infraestructure.Repositories
 {
@@ -45,11 +44,9 @@ namespace SalesOnline.Infraestructure.Repositories
                            select new UsuarioRolModel()
                            {
                                nombre = usu.nombreCompleto,
-                               correo = usu.correo,
-                               clave = usu.clave,
                                idRol = usu.idRol,
                                fechaRegistro = usu.fechaRegistro,
-                               IdUsuarioCreacion = usu.IdUsuarioMod
+
                            }).ToList();
 
 

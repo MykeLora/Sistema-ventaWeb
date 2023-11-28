@@ -7,10 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SalesOnline.Api\SalesOnline.Api.csproj" />
     <ProjectReference Include="..\SalesOnline.Application\SalesOnline.Application.csproj" />
-    <ProjectReference Include="..\SalesOnline.Domain\SalesOnline.Domain.csproj" />
-    <ProjectReference Include="..\SalesOnline.Infraestructure\SalesOnline.Infraestructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="Views\Usuario\Index.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>

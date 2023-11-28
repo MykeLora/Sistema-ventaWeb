@@ -1,28 +1,31 @@
-﻿using System;
-using System.Linq;
-using Microsoft.Extensions.Configuration;
+﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using SalesOnline.Application.Contract;
 using SalesOnline.Application.Core;
 using SalesOnline.Application.Dtos.Usuario;
 using SalesOnline.Application.Excepctions;
+using SalesOnline.Application.Extentions;
+using SalesOnline.Application.Response;
 using SalesOnline.Domain.Entities;
 using SalesOnline.Infraestructure.Interfaces;
+using System;
+using System.Linq;
+
 
 
 namespace SalesOnline.Application.Service
 {
     public class UsuarioService : IUsuarioService
     {
-        private readonly IUsuarioRepository usuarioRepository;        
+        private readonly IUsuarioRepository usuarioRepository;
         private readonly ILogger<UsuarioService> logger;
         private readonly IConfiguration configuration;
 
-        public UsuarioService(IUsuarioRepository usuarioRepository,                              
+        public UsuarioService(IUsuarioRepository usuarioRepository,
                               ILogger<UsuarioService> logger,
                               IConfiguration configuration)
         {
-            this.usuarioRepository = usuarioRepository;            
+            this.usuarioRepository = usuarioRepository;
             this.logger = logger;
             this.configuration = configuration;
         }
@@ -33,7 +36,16 @@ namespace SalesOnline.Application.Service
             ServiceResult result = new ServiceResult();
             try
             {
-                result.Data = this.usuarioRepository.GetUsuariosRol();
+                var usuarios = this.usuarioRepository.GetEntities()
+                                                     .Select(usu =>
+                                                          new UsuarioDtoGetAll()
+                                                          {
+                                                              fechaRegistro = usu.fechaRegistro,
+                                                              idRol = usu.idRol,
+                                                              nombreCompleto = usu.nombreCompleto,
+                                                              idUsuario = usu.idUsuario,
+                                                          });
+                result.Data = usuarios;
             }
             catch (Exception ex)
             {
@@ -48,11 +60,21 @@ namespace SalesOnline.Application.Service
         {
             ServiceResult result = new ServiceResult();
 
-            try 
+            try
             {
-                result.Data = this.usuarioRepository.GetUsuariosRol(id);
+                var usuario = this.usuarioRepository.GetEntity(id);
+
+                UsuarioDtoGetAll usuarioModel = new UsuarioDtoGetAll()
+                {
+                    fechaRegistro = usuario.fechaRegistro,
+                    idRol = usuario.idRol,
+                    nombreCompleto = usuario.nombreCompleto,
+                    idUsuario = usuario.idUsuario,
+                };
+
+                result.Data = usuarioModel;
             }
-            catch(Exception ex) 
+            catch (Exception ex)
             {
                 result.Success = false;
                 result.Message = $"Error Obteniendo el Usuario";
@@ -64,15 +86,15 @@ namespace SalesOnline.Application.Service
 
         public ServiceResult Remove(UsuarioDtoRemove dtoRemove)
         {
-            ServiceResult result= new ServiceResult();
+            ServiceResult result = new ServiceResult();
 
-            try 
+            try
             {
                 Usuario usuario = new Usuario()
                 {
-                    idUsuario = dtoRemove.idUsuario,
+                    idUsuario = dtoRemove.Id,
                     Eliminado = dtoRemove.Eliminado,
-                    IdUsuarioElimino = dtoRemove.idUsuario,
+                    IdUsuarioElimino = dtoRemove.IdUsuarioMod,
                     FechaElimino = dtoRemove.FechaMod
 
                 };
@@ -92,44 +114,52 @@ namespace SalesOnline.Application.Service
 
         public ServiceResult Save(UsuarioDtoAdd dtoAdd)
         {
-            ServiceResult result = new ServiceResult();
+            UsuarioResponse result = new UsuarioResponse();
 
             try
             {
-                if (string.IsNullOrEmpty(dtoAdd.nombre))
-                    throw new UsuarioServiceExcepcion(this.configuration["MensajeValidaciones:usuarioNombreRequerido"]);
+                var validResult = dtoAdd.IsUsuarioValid(this.configuration);
 
 
-                if (dtoAdd.nombre.Length > 100)
-                    throw new UsuarioServiceExcepcion(this.configuration["MensajeValidaciones:usuarioNombreLongitud"]);
+                if (!validResult.Success)
+                {
+                    result.Success = validResult.Success;
+                    result.Message = validResult.Message;
+                    return result;
+                }
 
 
                 Usuario usuario = new Usuario()
                 {
-                    idUsuario = dtoAdd.idUsuario,
-                    nombreCompleto = dtoAdd.nombre,
+                    fechaRegistro = dtoAdd.FechaMod,
+                    IdUsuarioCreacion = dtoAdd.IdUsuarioMod,
+                    idRol = dtoAdd.idRol,
+                    nombreCompleto = dtoAdd.nombreCompleto,
                     correo = dtoAdd.correo,
                     clave = dtoAdd.clave,
-                    idRol = dtoAdd.idRol,
-                    fechaRegistro = dtoAdd.fechaRegistro,                    
+                    esActivo = dtoAdd.esActivo
                 };
+
                 this.usuarioRepository.Save(usuario);
 
-                result.Message = "El Usuario fue Guardado correctamente";
+                result.Message = this.configuration["MensajesUsuarioSuccess:AddSuccessMessage"];
+                result.idUsuario = usuario.idUsuario;
             }
-            catch (UsuarioServiceExcepcion cex)
+            catch (UsuarioServiceExcepcion ssex)
             {
                 result.Success = false;
-                result.Message = cex.Message;
-                this.logger.LogError($"{result.Message}", cex.ToString());
+                result.Message = ssex.Message;
+                this.logger.LogError(result.Message, ssex.ToString());
+
             }
             catch (Exception ex)
             {
-                result.Success = false;
-                result.Message = $"Error Guardado el Usuario";
-                this.logger.LogError($"{result.Message}", ex.ToString());
-            }
 
+                result.Success = false;
+                result.Message = this.configuration["MensajesUsuarioSuccess:AddErrorMessage"];
+                this.logger.LogError(result.Message, ex.ToString());
+
+            }
             return result;
         }
 
@@ -139,21 +169,23 @@ namespace SalesOnline.Application.Service
 
             try
             {
-                if (string.IsNullOrEmpty(dtoUpdate.nombre))
+                if (string.IsNullOrEmpty(dtoUpdate.nombreCompleto))
                     throw new UsuarioServiceExcepcion(this.configuration["MensajeValidaciones:UsuarioNombreRequerido"]);
 
 
-                if (dtoUpdate.nombre.Length > 100)
+                if (dtoUpdate.nombreCompleto.Length > 100)
                     throw new UsuarioServiceExcepcion(this.configuration["MensajeValidaciones:UsuarioNombreLongitud"]);
 
                 Usuario usuario = new Usuario()
                 {
-                    idUsuario = dtoUpdate.idUsuario,
-                    nombreCompleto = dtoUpdate.nombre,
+                    idUsuario = dtoUpdate.Id,
+                    nombreCompleto = dtoUpdate.nombreCompleto,
+                    esActivo = dtoUpdate.esActivo,
+                    idRol = dtoUpdate.idRol,
+                    FechaMod = dtoUpdate.fechaRegistro,
                     correo = dtoUpdate.correo,
                     clave = dtoUpdate.clave,
-                    idRol = dtoUpdate.idRol,
-                    fechaRegistro = dtoUpdate.fechaRegistro,
+                    IdUsuarioCreacion = dtoUpdate.IdUsuarioMod
                 };
                 this.usuarioRepository.Update(usuario);
 
@@ -169,4 +201,6 @@ namespace SalesOnline.Application.Service
             return result;
         }
     }
+
+
 }
