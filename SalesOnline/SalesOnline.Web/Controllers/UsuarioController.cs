@@ -1,8 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using SalesOnline.Application.Contract;
-using SalesOnline.Application.Core;
 using SalesOnline.Application.Dtos.Usuario;
 using SalesOnline.Web.Models.Responses;
 
@@ -22,8 +20,7 @@ namespace SalesOnline.Web.Controllers
         // GET: UsuarioController
         public ActionResult Index()
         {
-            UsuarioListResponse usuarioList = new UsuarioListResponse();
-
+            UsuarioListResponse usuarioList = new UsuarioListResponse();            
 
             using (var client = new HttpClient(this.clientHandler))
             {
@@ -34,13 +31,13 @@ namespace SalesOnline.Web.Controllers
                         string apiResponse = response.Content.ReadAsStringAsync().Result;
 
                         usuarioList = JsonConvert.DeserializeObject<UsuarioListResponse>(apiResponse);
+                        
 
                         if (!usuarioList.success)
                         {
                             ViewBag.Message = usuarioList.message;
                             return View();
                         }
-
 
                     }
                     else
