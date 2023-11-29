@@ -1,9 +1,6 @@
 using Microsoft.EntityFrameworkCore;
-using SalesOnline.Application.Contract;
-using SalesOnline.Application.Service;
 using SalesOnline.Infraestructure.Context;
-using SalesOnline.Infraestructure.Interfaces;
-using SalesOnline.Infraestructure.Repositories;
+using SalesOnline.Ioc.Dependencies;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,12 +11,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<SalesContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("SalesContext")));
 
 
+builder.Services.AddUsuarioDependecy();
 
 
-// Dependencia de los repositorios //
-builder.Services.AddTransient<IUsuarioRepository, UsuarioRepository>();
-builder.Services.AddTransient<IUsuarioService, UsuarioService>();
-//Dependencias del modulo Usuario //
 
 // Add services to the container.
 

@@ -29,6 +29,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CommonPrinciples", "CommonP
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SalesOnline.CommonPrincipIes", "SalesOnline.CommonPrincipIes\SalesOnline.CommonPrincipIes.csproj", "{9F15EB7E-F283-4412-B1C9-82F4ADDDFD9A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesOnline.Ioc", "SalesOnline.Ioc\SalesOnline.Ioc.csproj", "{73411F7F-DC5A-43F5-960B-E23C1FDB1E99}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,6 +61,10 @@ Global
 		{9F15EB7E-F283-4412-B1C9-82F4ADDDFD9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9F15EB7E-F283-4412-B1C9-82F4ADDDFD9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9F15EB7E-F283-4412-B1C9-82F4ADDDFD9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73411F7F-DC5A-43F5-960B-E23C1FDB1E99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73411F7F-DC5A-43F5-960B-E23C1FDB1E99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73411F7F-DC5A-43F5-960B-E23C1FDB1E99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73411F7F-DC5A-43F5-960B-E23C1FDB1E99}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -70,6 +76,7 @@ Global
 		{DFEEFD7A-642F-4682-B456-D388CF018C28} = {9283A9AE-F1CC-4114-84A3-B50231DD5851}
 		{16D7CDEF-5C22-449F-96DC-E6C3B7C87E33} = {16B3AF5B-8550-4193-A5E9-071820550142}
 		{9F15EB7E-F283-4412-B1C9-82F4ADDDFD9A} = {67317079-7569-4D63-86BD-13344C2482C8}
+		{73411F7F-DC5A-43F5-960B-E23C1FDB1E99} = {A00D500F-3D1D-4248-BF76-7E11FC44CC58}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CFBBB263-6B39-4CCF-AE7E-51AA8942F9DE}

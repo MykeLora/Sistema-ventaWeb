@@ -294,17 +294,20 @@
           }
         }
       },
-      "Microsoft.Extensions.DependencyInjection.Abstractions/3.1.32": {
+      "Microsoft.Extensions.DependencyInjection.Abstractions/8.0.0": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
+          "lib/net6.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
+          "lib/net6.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
             "related": ".xml"
           }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
         }
       },
       "Microsoft.Extensions.DependencyModel/1.0.3": {
@@ -2263,6 +2266,21 @@
         "runtime": {
           "bin/placeholder/SalesOnline.Infraestructure.dll": {}
         }
+      },
+      "SalesOnline.Ioc/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.0",
+          "SalesOnline.Application": "1.0.0",
+          "SalesOnline.Infraestructure": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/SalesOnline.Ioc.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SalesOnline.Ioc.dll": {}
+        }
       }
     }
   },
@@ -2657,18 +2675,36 @@
         "microsoft.extensions.dependencyinjection.nuspec"
       ]
     },
-    "Microsoft.Extensions.DependencyInjection.Abstractions/3.1.32": {
-      "sha512": "dARl3iAcHZshMvnXtKpLGES4QZq8ExxIQnF2s8pXfP3MJOOXRSBsk+UmA3TMVN4hPr4O2QFS8AMJp9GDD/4lDw==",
+    "Microsoft.Extensions.DependencyInjection.Abstractions/8.0.0": {
+      "sha512": "cjWrLkJXK0rs4zofsK4bSdg+jhDLTaxrkXu4gS6Y7MAlCvRyNNgwY/lJi5RDlQOnSZweHqoyvgvbdvQsRIW+hg==",
       "type": "package",
-      "path": "microsoft.extensions.dependencyinjection.abstractions/3.1.32",
+      "path": "microsoft.extensions.dependencyinjection.abstractions/8.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
+        "LICENSE.TXT",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/Microsoft.Extensions.DependencyInjection.Abstractions.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net6.0/_._",
+        "buildTransitive/netcoreapp2.0/Microsoft.Extensions.DependencyInjection.Abstractions.targets",
+        "lib/net462/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
+        "lib/net462/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
+        "lib/net6.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
+        "lib/net6.0/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
+        "lib/net7.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
+        "lib/net7.0/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
+        "lib/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
+        "lib/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
         "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
         "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
-        "microsoft.extensions.dependencyinjection.abstractions.3.1.32.nupkg.sha512",
-        "microsoft.extensions.dependencyinjection.abstractions.nuspec"
+        "lib/netstandard2.1/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
+        "lib/netstandard2.1/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
+        "microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
+        "microsoft.extensions.dependencyinjection.abstractions.nuspec",
+        "useSharedDesignerContext.txt"
       ]
     },
     "Microsoft.Extensions.DependencyModel/1.0.3": {
@@ -7140,11 +7176,17 @@
       "type": "project",
       "path": "../SalesOnline.Infraestructure/SalesOnline.Infraestructure.csproj",
       "msbuildProject": "../SalesOnline.Infraestructure/SalesOnline.Infraestructure.csproj"
+    },
+    "SalesOnline.Ioc/1.0.0": {
+      "type": "project",
+      "path": "../SalesOnline.Ioc/SalesOnline.Ioc.csproj",
+      "msbuildProject": "../SalesOnline.Ioc/SalesOnline.Ioc.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "SalesOnline.Application >= 1.0.0"
+      "SalesOnline.Application >= 1.0.0",
+      "SalesOnline.Ioc >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -7182,6 +7224,9 @@
           "projectReferences": {
             "C:\\MyProyect\\SalesOnline\\SalesOnline.Application\\SalesOnline.Application.csproj": {
               "projectPath": "C:\\MyProyect\\SalesOnline\\SalesOnline.Application\\SalesOnline.Application.csproj"
+            },
+            "C:\\MyProyect\\SalesOnline\\SalesOnline.Ioc\\SalesOnline.Ioc.csproj": {
+              "projectPath": "C:\\MyProyect\\SalesOnline\\SalesOnline.Ioc\\SalesOnline.Ioc.csproj"
             }
           }
         }
