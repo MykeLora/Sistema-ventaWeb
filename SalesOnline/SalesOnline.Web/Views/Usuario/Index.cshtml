@@ -1,7 +1,5 @@
 ﻿@model IEnumerable<SalesOnline.Web.Models.Responses.UsuarioViewResult>
 
-@*@model IEnumerable<SalesOnline.Application.Dtos.Usuario.UsuarioDtoGetAll>*@
-
 @{
     ViewData["Title"] = "Index";
 }
@@ -15,10 +13,9 @@
 <table class="table">
     <thead>
         <tr>
-
             <th>
                 @Html.DisplayNameFor(model => model.nombreCompleto)
-            </th>
+            </th>            
             <th>
                 @Html.DisplayNameFor(model => model.fechaRegistro)
             </th>            
@@ -29,7 +26,6 @@
         @foreach (var item in Model)
         {
             <tr>
-
                 <td>
                     @Html.DisplayFor(modelItem => item.nombreCompleto)
                 </td>                
@@ -38,8 +34,8 @@
                 </td>
                 <td>
                     @Html.ActionLink("Edit", "Edit", new {  id= item.idUsuario  }) |
-                    @Html.ActionLink("Details", "Details", new { id=item.idUsuario})
-
+                    @Html.ActionLink("Details", "Details", new { id=item.idUsuario}) |
+                    @Html.ActionLink("Delete", "Delete", new { id=item.idUsuario })
                 </td>
             </tr>
         }

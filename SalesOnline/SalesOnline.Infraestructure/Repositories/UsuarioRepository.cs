@@ -16,43 +16,7 @@ namespace SalesOnline.Infraestructure.Repositories
         {
             this.context = context;
         }
-
-        public UsuarioRolModel GetUsuarioRol(int Id)
-        {
-            return this.GetUsuariosRol().SingleOrDefault(usu => usu.idUsuario == Id);
-        }
-
-        public List<Usuario> GetUsuariosByRol(int idRol)
-        {
-            return this.context.Usuario.Where(cd => cd.idRol == idRol
-                                              && !cd.Eliminado).ToList();
-        }
-
-
-        public List<UsuarioRolModel> GetUsuariosByidRol(int idRol)
-        {
-            return this.GetUsuariosRol().Where(cd => cd.idRol == idRol).ToList();
-        }
-
-
-        public List<UsuarioRolModel> GetUsuariosRol()
-        {
-
-            var usuario = (from usu in this.GetEntities()
-                           join rol in this.context.rol on usu.idRol equals rol.idRol
-                           where !usu.Eliminado
-                           select new UsuarioRolModel()
-                           {
-                               nombre = usu.nombreCompleto,
-                               idRol = usu.idRol,
-                               fechaRegistro = usu.fechaRegistro,
-
-                           }).ToList();
-
-
-            return usuario;
-        }
-
+               
         public override List<Usuario> GetEntities()
         {
             return base.GetEntities().Where(usu => !usu.Eliminado).ToList();
@@ -80,23 +44,43 @@ namespace SalesOnline.Infraestructure.Repositories
             this.context.SaveChanges();
 
         }
-
-        public UsuarioRolModel GetUsuariosRol(int Id)
-        {
-            return this.GetUsuariosRol().SingleOrDefault(usu => usu.idUsuario == Id);
-        }
+        
 
         public override void Remove(Usuario entity)
         {
             Usuario usuario = this.GetEntity(entity.idUsuario);
 
             usuario.idUsuario = entity.idUsuario;
-            usuario.Eliminado = entity.Eliminado;
+            usuario.Eliminado = entity.Eliminado = true;
             usuario.IdUsuarioElimino = entity.IdUsuarioElimino;
             usuario.FechaElimino = entity.FechaElimino;
 
             this.context.Usuario.Update(usuario);
             this.context.SaveChanges();
+        }
+
+        public List<UsuarioModel> GetUsuarios()
+        {
+            var usuarios = this.context.Usuario
+                             .Where(usu => !usu.Eliminado)
+                             .OrderByDescending(usu => usu.fechaRegistro)
+                             .Select(usu => new UsuarioModel
+                             {
+                                 fechaRegistro = usu.fechaRegistro,
+                                 idRol = usu.idRol,
+                                 nombreCompleto = usu.nombreCompleto,
+                                 correo = usu.correo,
+                                 idUsuario = usu.idUsuario,
+                             })
+                                .ToList();
+
+            return usuarios;
+        }
+
+        public UsuarioModel GetUsuario(int idUsuario)
+        {
+            var usuarios = this.GetUsuarios();
+            return usuarios.Find(s => s.idUsuario == idUsuario);
         }
     }
 }

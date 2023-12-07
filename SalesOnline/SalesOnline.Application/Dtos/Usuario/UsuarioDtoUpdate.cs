@@ -2,7 +2,7 @@
 {
     public class UsuarioDtoUpdate : UsuarioDtoBase
     {
-        public int Id { get; set; }
+        public int idUsuario { get; set; }
 
     }
 }

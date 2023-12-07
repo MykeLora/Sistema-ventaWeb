@@ -74,7 +74,7 @@ namespace SalesOnline.API.Controllers
         }
 
         [HttpPost("RemoveUsuario")]
-        public IActionResult Put([FromBody] UsuarioDtoRemove usuarioDtoRemove)
+        public IActionResult Remove([FromBody] UsuarioDtoRemove usuarioDtoRemove)
         {
 
             var result = this.usuarioService.Remove(usuarioDtoRemove);

@@ -1,12 +1,5 @@
 ﻿namespace SalesOnline.Web.Models.Responses
 {
-    public class UsuarioListResponse
-    {
-        public bool success { get; set; }
-        public string message { get; set; }
-        public List<UsuarioViewResult> data { get; set; }
-    }
-
     public class UsuarioViewResult
     {
         public int idUsuario { get; set; }

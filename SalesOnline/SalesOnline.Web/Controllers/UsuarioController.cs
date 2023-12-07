@@ -1,86 +1,50 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json;
 using SalesOnline.Application.Contract;
 using SalesOnline.Application.Dtos.Usuario;
 using SalesOnline.Web.Models.Responses;
+using SalesOnline.Web.Services;
 
 namespace SalesOnline.Web.Controllers
 {
     public class UsuarioController : Controller
     {
         private readonly IUsuarioService usuarioService;
+        private readonly string usuarioApiURLBase;
+        private readonly IWebService webService;
 
-        HttpClientHandler clientHandler = new HttpClientHandler();
-
-        public UsuarioController(IUsuarioService usuarioService)
+        public UsuarioController(IUsuarioService storeService, IWebService webService, IConfiguration configuration)
         {
-            this.usuarioService = usuarioService;
+            this.usuarioService = storeService;
+            this.webService = webService;
+            this.usuarioApiURLBase = configuration["ApiSettings:UsuarioApiBaseUrl"];
         }
-
-        // GET: UsuarioController
         public ActionResult Index()
         {
-            UsuarioListResponse usuarioList = new UsuarioListResponse();            
-
-            using (var client = new HttpClient(this.clientHandler))
+            try
             {
-                using (var response = client.GetAsync("http://localhost:5145/api/Usuario/GetUsuarios").Result)
-                {
-                    if (response.IsSuccessStatusCode)
-                    {
-                        string apiResponse = response.Content.ReadAsStringAsync().Result;
-
-                        usuarioList = JsonConvert.DeserializeObject<UsuarioListResponse>(apiResponse);
-                        
-
-                        if (!usuarioList.success)
-                        {
-                            ViewBag.Message = usuarioList.message;
-                            return View();
-                        }
-
-                    }
-                    else
-                    {
-                        usuarioList.message = "Error conectandose al api.";
-                        usuarioList.success = false;
-                        ViewBag.Message = usuarioList.message;
-                        return View();
-                    }
-                }
+                BaseResponse<List<UsuarioViewResult>> responseData = webService.GetDataFromApi<List<UsuarioViewResult>>($"{usuarioApiURLBase}GetUsuarios");
+                return View(responseData.data);
             }
-
-            return View(usuarioList.data);
+            catch (Exception ex)
+            {
+                ViewBag.ErrorMessage = ex.Message;
+                return View();
+            }
         }
 
         // GET: UsuarioController/Details/5
         public ActionResult Details(int id)
         {
-
-            UsuarioDetailResponse usuarioDetailResponse = new UsuarioDetailResponse();
-
-
-            using (var client = new HttpClient(this.clientHandler))
+            try
             {
-
-                var url = $"http://localhost:5145/api/Usuario/GetUsuario?id={id}";
-
-                using (var response = client.GetAsync(url).Result)
-                {
-                    if (response.IsSuccessStatusCode)
-                    {
-                        string apiResponse = response.Content.ReadAsStringAsync().Result;
-
-                        usuarioDetailResponse = JsonConvert.DeserializeObject<UsuarioDetailResponse>(apiResponse);
-
-                        if (!usuarioDetailResponse.success)
-                            ViewBag.Message = usuarioDetailResponse.message;
-                    }
-                }
+                BaseResponse<UsuarioViewResult> responseData = webService.GetDataFromApi<UsuarioViewResult>($"{usuarioApiURLBase}GetUsuario?id={id}");
+                return View(responseData.data);
             }
-
-
-            return View(usuarioDetailResponse.data);
+            catch (Exception ex)
+            {
+                ViewBag.ErrorMessage = ex.Message;
+                return View();
+            }
         }
 
         // GET: UsuarioController/Create
@@ -94,51 +58,20 @@ namespace SalesOnline.Web.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(UsuarioDtoAdd usuarioDtoAdd)
         {
-            BaseResponse baseResponse = new BaseResponse();
+            var apiUrl = $"{usuarioApiURLBase}SaveUsuario";
+
+            usuarioDtoAdd.FechaMod = DateTime.Now;
+            usuarioDtoAdd.IdUsuarioMod = 1;
 
             try
             {
-
-                using (var client = new HttpClient(this.clientHandler))
-                {
-
-                    var url = $"http://localhost:5145/api/Usuario/SaveUsuario";
-
-                    usuarioDtoAdd.FechaMod = DateTime.Now;
-                    usuarioDtoAdd.IdUsuarioMod = 1;
-
-                    StringContent content = new StringContent(JsonConvert.SerializeObject(usuarioDtoAdd), System.Text.Encoding.UTF8, "application/json");
-
-                    using (var response = client.PostAsync(url, content).Result)
-                    {
-                        if (response.IsSuccessStatusCode)
-                        {
-                            string apiResponse = response.Content.ReadAsStringAsync().Result;
-
-                            baseResponse = JsonConvert.DeserializeObject<BaseResponse>(apiResponse);
-
-                            if (!baseResponse.success)
-                            {
-                                ViewBag.Message = baseResponse.message;
-                                return View();
-                            }
-
-                        }
-                        else
-                        {
-                            baseResponse.message = "Error conectandose al api.";
-                            baseResponse.success = false;
-                            ViewBag.Message = baseResponse.message;
-                            return View();
-                        }
-                    }
-                }
+                webService.PostDataToApi<BaseResponse<UsuarioDtoAdd>>(apiUrl, usuarioDtoAdd);
 
                 return RedirectToAction(nameof(Index));
             }
-            catch
+            catch (ApplicationException ex)
             {
-                ViewBag.Message = baseResponse.message;
+                ViewBag.ErrorMessage = ex.Message;
                 return View();
             }
         }
@@ -146,80 +79,73 @@ namespace SalesOnline.Web.Controllers
         // GET: UsuarioController/Edit/5
         public ActionResult Edit(int id)
         {
-            UsuarioDetailResponse usuarioDetailResponse = new UsuarioDetailResponse();
-
-
-            using (var client = new HttpClient(this.clientHandler))
+            try
             {
-
-                var url = $"http://localhost:5145/api/Usuario/GetUsuario?id={id}";
-
-                using (var response = client.GetAsync(url).Result)
-                {
-                    if (response.IsSuccessStatusCode)
-                    {
-                        string apiResponse = response.Content.ReadAsStringAsync().Result;
-
-                        usuarioDetailResponse = JsonConvert.DeserializeObject<UsuarioDetailResponse>(apiResponse);
-
-                    }
-                }
+                BaseResponse<UsuarioViewResult> responseData = webService.GetDataFromApi<UsuarioViewResult>($"{usuarioApiURLBase}GetUsuario?id={id}");
+                return View(responseData.data);
             }
-
-
-            return View(usuarioDetailResponse.data);
+            catch (Exception ex)
+            {
+                ViewBag.ErrorMessage = ex.Message;
+                return View();
+            }
         }
-
 
         // POST: UsuarioController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(UsuarioDtoUpdate usuarioDtoUpdate)
         {
-            BaseResponse baseResponse = new BaseResponse();
+            var apiUrl = $"{usuarioApiURLBase}UpdateUsuario";
+
+            usuarioDtoUpdate.FechaMod = DateTime.Now;
+            usuarioDtoUpdate.IdUsuarioMod = 1;
 
             try
             {
-
-                using (var client = new HttpClient(this.clientHandler))
-                {
-
-                    var url = $"http://localhost:5145/api/Usuario/UpdateUsuario";
-
-                    usuarioDtoUpdate.FechaMod = DateTime.Now;
-                    usuarioDtoUpdate.IdUsuarioMod = 1;
-
-                    StringContent content = new StringContent(JsonConvert.SerializeObject(usuarioDtoUpdate), System.Text.Encoding.UTF8, "application/json");
-
-                    using (var response = client.PostAsync(url, content).Result)
-                    {
-                        if (response.IsSuccessStatusCode)
-                        {
-                            string apiResponse = response.Content.ReadAsStringAsync().Result;
-
-                            baseResponse = JsonConvert.DeserializeObject<BaseResponse>(apiResponse);
-
-                            if (!baseResponse.success)
-                            {
-                                ViewBag.Message = baseResponse.message;
-                                return View();
-                            }
-
-                        }
-                        else
-                        {
-                            ViewBag.Message = baseResponse.message;
-                            return View();
-                        }
-                    }
-                }
-
+                webService.PostDataToApi<BaseResponse<UsuarioDtoUpdate>>(apiUrl, usuarioDtoUpdate);
 
                 return RedirectToAction(nameof(Index));
             }
-            catch
+            catch (ApplicationException ex)
             {
-                ViewBag.Message = baseResponse.message;
+                ViewBag.ErrorMessage = ex.Message;
+                return View();
+            }
+        }
+
+        public ActionResult Delete(int id)
+        {
+            try
+            {
+                BaseResponse<UsuarioDtoRemove> responseData = webService.GetDataFromApi<UsuarioDtoRemove>($"{usuarioApiURLBase}GetUsuario?id={id}");
+                return View(responseData.data);
+            }
+            catch (Exception ex)
+            {
+                ViewBag.ErrorMessage = ex.Message;
+                return View();
+            }
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Delete(UsuarioDtoRemove usuarioDtoRemove)
+        {
+            var apiUrl = $"{usuarioApiURLBase}RemoveUsuario";
+
+            usuarioDtoRemove.FechaMod = DateTime.Now;
+            usuarioDtoRemove.IdUsuarioMod = 1;
+
+            try
+            {
+                var response = webService.PostDataToApi<BaseResponse<UsuarioDtoRemove>>(apiUrl, usuarioDtoRemove);
+
+                return RedirectToAction(nameof(Index));
+            }
+            catch (ApplicationException ex)
+            {
+                ViewBag.ErrorMessage = ex.Message;
                 return View();
             }
         }

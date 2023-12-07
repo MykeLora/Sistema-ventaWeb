@@ -6,6 +6,7 @@ using SalesOnline.Application.Dtos.Usuario;
 using SalesOnline.Application.Excepctions;
 using SalesOnline.Application.Extentions;
 using SalesOnline.Application.Response;
+using SalesOnline.Application.Validations;
 using SalesOnline.Domain.Entities;
 using SalesOnline.Infraestructure.Interfaces;
 using System;
@@ -34,52 +35,56 @@ namespace SalesOnline.Application.Service
         public ServiceResult GetAll()
         {
             ServiceResult result = new ServiceResult();
+
             try
             {
-                var usuarios = this.usuarioRepository.GetEntities()
-                                                     .Select(usu =>
-                                                          new UsuarioDtoGetAll()
-                                                          {
-                                                              fechaRegistro = usu.fechaRegistro,
-                                                              idRol = usu.idRol,
-                                                              nombreCompleto = usu.nombreCompleto,
-                                                              idUsuario = usu.idUsuario,
-                                                          });
-                result.Data = usuarios;
+                result.Data = this.usuarioRepository.GetUsuarios();
+            }
+            catch (UsuarioServiceExcepcion uex)
+            {
+                result.Success = false;
+                result.Message = uex.Message;
+                this.logger.LogError($"{result.Message}");
+
             }
             catch (Exception ex)
             {
                 result.Success = false;
-                result.Message = $"Error Obteniendo los Usuarios.";
+                result.Message = "Error obteniendo los usuarios";
                 this.logger.LogError($"{result.Message}", ex.ToString());
             }
+
             return result;
         }
 
         public ServiceResult GetById(int id)
         {
             ServiceResult result = new ServiceResult();
+            result = UsuarioValidation.ValidateIdUsuario(id, configuration);
+
+            if (!result.Success)
+            {
+                return result;
+            }
 
             try
             {
-                var usuario = this.usuarioRepository.GetEntity(id);
+                result.Data = this.usuarioRepository.GetUsuario(id);
+            }
+            catch (UsuarioServiceExcepcion uex)
+            {
+                result.Success = false;
+                result.Message = uex.Message;
+                this.logger.LogError($"{result.Message}");
 
-                UsuarioDtoGetAll usuarioModel = new UsuarioDtoGetAll()
-                {
-                    fechaRegistro = usuario.fechaRegistro,
-                    idRol = usuario.idRol,
-                    nombreCompleto = usuario.nombreCompleto,
-                    idUsuario = usuario.idUsuario,
-                };
-
-                result.Data = usuarioModel;
             }
             catch (Exception ex)
             {
                 result.Success = false;
-                result.Message = $"Error Obteniendo el Usuario";
+                result.Message = $"Error obteniendo el usuario de id: {id}";
                 this.logger.LogError($"{result.Message}", ex.ToString());
             }
+
             return result;
 
         }
@@ -92,7 +97,7 @@ namespace SalesOnline.Application.Service
             {
                 Usuario usuario = new Usuario()
                 {
-                    idUsuario = dtoRemove.Id,
+                    idUsuario = dtoRemove.idUsuario,
                     Eliminado = dtoRemove.Eliminado,
                     IdUsuarioElimino = dtoRemove.IdUsuarioMod,
                     FechaElimino = dtoRemove.FechaMod
@@ -178,7 +183,7 @@ namespace SalesOnline.Application.Service
 
                 Usuario usuario = new Usuario()
                 {
-                    idUsuario = dtoUpdate.Id,
+                    idUsuario = dtoUpdate.idUsuario,
                     nombreCompleto = dtoUpdate.nombreCompleto,
                     esActivo = dtoUpdate.esActivo,
                     idRol = dtoUpdate.idRol,

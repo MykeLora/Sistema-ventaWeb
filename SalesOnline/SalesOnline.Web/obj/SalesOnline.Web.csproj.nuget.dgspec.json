@@ -334,6 +334,12 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "GoogleApi": {
+              "target": "Package",
+              "version": "[5.2.4, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

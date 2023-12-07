@@ -7,8 +7,7 @@ namespace SalesOnline.Infraestructure.Interfaces
 {
     public interface IUsuarioRepository : IBaseRepository<Usuario>
     {
-        List<UsuarioRolModel> GetUsuariosByidRol(int idRol);
-        List<UsuarioRolModel> GetUsuariosRol();
-        UsuarioRolModel GetUsuariosRol(int Id);
+        public List<UsuarioModel> GetUsuarios();
+        public UsuarioModel GetUsuario(int idUsuario);
     }
 }
